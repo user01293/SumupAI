@@ -7,7 +7,6 @@ import { FileText } from "lucide-react";
 import SummaryViewer from "@/components/summaries/summaryViewer";
 
 export default async function SummaryPage(props:{
-
     params: Promise<{id:string}>
 }){
     const params= await props.params;

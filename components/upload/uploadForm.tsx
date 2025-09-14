@@ -82,8 +82,8 @@ export default function UploadForm(){
             setTimeout(()=>{
             toast.info("You Know Whats Happening",{
                 description: "We're Processing your file...✨"
-            });
-        },3000)
+                });
+            },3000)
             //parse the PDF using langchain
             const result = await generatePdfSummary(response);
             
