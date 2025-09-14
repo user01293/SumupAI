@@ -1,0 +1,16 @@
+import BgGradient from "@/components/common/BgGradient";
+import UploadHeader from "@/components/upload/uploadHeader";
+import UploadForm from "@/components/upload/uploadForm";
+export default function Page() {
+    return (
+        <section className="min-h-screen ">
+            <BgGradient></BgGradient>
+            <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+                <div className="flex flex-col justify-center items-center gap-6">
+                    <UploadHeader/>
+                    <UploadForm />
+                </div>
+            </div>
+        </section>
+    )
+}
