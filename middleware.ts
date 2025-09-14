@@ -1,6 +1,13 @@
 import { clerkMiddleware } from '@clerk/nextjs/server';
 
-export default clerkMiddleware();
+// Only use Clerk middleware if keys are configured
+const clerkPublishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+const isClerkConfigured = clerkPublishableKey && clerkPublishableKey !== 'pk_test_temp_key_for_deployment';
+
+export default isClerkConfigured ? clerkMiddleware() : (req: any) => {
+  // Simple pass-through middleware when Clerk is not configured
+  return;
+};
 
 export const config = {
   matcher: [
