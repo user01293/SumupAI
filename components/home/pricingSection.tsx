@@ -2,27 +2,8 @@ import  Link  from "next/link"
 import { cn } from "@/lib/utils"
 import { ArrowRight, CheckIcon } from "lucide-react"
 import { Button } from "../ui/button"
+import { Pricingplans } from "@/utils/constants"
 
-const plans = [
-    {
-        id:"Basic",
-        name:"Basic",
-        price:9,
-        items:["5 free PDFs per month", "e-mail support","Standard processing"],
-        payment : "",
-        description : "For personal use and small projects",
-
-    },
-    {
-        id:"Pro",
-        name:"Pro",
-        price:19,
-        items:["Unlimited PDFs", "24/7 priority support","Priority processing"],
-        payement : "",
-        description : "For professional use and larger projects",
-        payment : "",
-    }
-]
 
 type PriceType= {
     name:string,
@@ -30,7 +11,7 @@ type PriceType= {
     items:string[],
     description?:string,
     id?:string,
-    payment:string,
+    paymentLink:string,
 }
 
 
@@ -43,7 +24,7 @@ export default function PricingSecion() {
                 </div>
                 <div className="relative flex flex-col justify-center 
                 items-center lg:flex-row lg:items-stretch gap-8">
-                    {plans.map((plan) => 
+                    {Pricingplans.map((plan) => 
                     <PricingCard key={plan.id} {...plan} />)}
                 </div>
             </div>
@@ -51,7 +32,7 @@ export default function PricingSecion() {
     )
 }
 
-const PricingCard = ({name,price,description,items,id,payment}:PriceType) => {
+const PricingCard = ({name,price,description,items,id,paymentLink}:PriceType) => {
     return (
         <div className="relative w-full max-w-lg hover:scale-105 
         hover:transition-all duration-300">
@@ -80,7 +61,7 @@ const PricingCard = ({name,price,description,items,id,payment}:PriceType) => {
             </div>
             <div className="space-y-2 flex justify-center w-ful">
                 <Link
-                href={"https://checkout.razorpay.com/v1/checkout.js"} // e.g. 'https://rzp.io/l/abc123'
+                href={paymentLink} // e.g. 'https://rzp.io/l/abc123'
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
