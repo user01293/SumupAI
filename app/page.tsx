@@ -4,6 +4,7 @@ import DemoSection from "@/components/home/demoSection";
 import HowItWorksSection from "@/components/home/howItWorksSection";
 import PricingSecion from "@/components/home/pricingSection";
 import CTASection from "@/components/home/ctaSection";
+import Footer from "@/components/common/Footer";
 export default function Home() {
   return (
     <div className="relative w-full">
@@ -19,6 +20,8 @@ export default function Home() {
         <PricingSecion/>
 
         <CTASection />
+
+        
       
     </div>
   );

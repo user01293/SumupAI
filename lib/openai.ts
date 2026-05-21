@@ -2,13 +2,13 @@ import OpenAI from "openai"
 import {SUMMARY_SYSTEM_PROMPT} from "@/utils/prompts"
 
 const openai= new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: process.env.OPENAI_API_KEY2,
 })
 
 export async function generateSummaryFromOpenAi(pdfText:string){
     try {
         const completion= await openai.chat.completions.create({
-            model: "gpt-4o",
+            model: "gpt-3.5-turbo",
             messages: [
                 {
                     role: "system",

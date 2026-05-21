@@ -39,4 +39,5 @@ Example format:
 • 📍 This is how every point should look
 • 🍂 This is another example point
 
+Make sure there is enough points to make a comprehensive summary.
 Never deviate from this format. Every line that contains content must start with "• " followed by an emoji.`;

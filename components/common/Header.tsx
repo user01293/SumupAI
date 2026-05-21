@@ -35,7 +35,7 @@ export default function Header() {
                     <SignedIn>
                         <div className="flex justify-center items-center gap-2">
                         <NavLink href="/upload">Upload a PDF</NavLink>
-                        <div>Pro</div>
+                        <div className="text-amber-600  animate-pulse">Pro</div>
                         <SignedIn>
                             <UserButton />
                         </SignedIn>
